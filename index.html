@@ -3,36 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects</title>
-</head>
-<body>
-    <h1>heluuu</h1>
-    <h1 id="person1-name"></h1>
-    <h1 id="person1-age"></h1>
-    <h1 id="person1-occupation"></h1>
-
-
-    <script>
-       //Input
-        const person1 ={
-            name:"Jhandie Sumihay",
-            age:18,
-            occupation:"pagwapo"
+    <title>Homepage with Topics</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f3f6;
+            color: #333;
+            transition: background-color 0.3s ease;
         }
 
-        //Process and Output
+        header {
+            background: linear-gradient(45deg, #ff4b5c, #ff9a8b); /* Gradient background */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #f44336;
+        }
 
-        //Solution 1: Display via console.log
-        console.log("Name: " + person1.name);
-        console.log("Age: "  +person1.age);
-        console.log("Occupation: " + person1.occupation);
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: bold;
+        }
 
-        //Solution 2: Display via HTML
-        document.getElementById("person1-name").innerHTML = "Name: " + person1.name;
-        document.getElementById("person1-age").innerHTML = "Age: " + person1.age;
-        document.getElementById("person1-occupation").innerHTML = "Occupation: " + person1.occupation;
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+        }
 
+        .container2 {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
 
+        h3 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            transition: transform 0.3s ease;
+        }
+
+        h3 a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: #ff9a8b; /* Soft pink background */
+            transition: all 0.3s ease;
+        }
+
+        h3 a:hover {
+            color: #fff;
+            background-color: #ff4b5c; /* Darker pink on hover */
+            transform: scale(1.1); /* Scale up on hover */
+        }
+
+        footer {
+            background: linear-gradient(45deg, #ff4b5c, #ff9a8b);
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Add responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .container2 {
+                width: 100%;
+                padding: 25px;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div>
+            <h1>Explore Topics</h1>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="container2">
+            <h3><a href="main/main.html">PROFILE</a></h3>
+            <h3><a href="Topic-1_ObjAndClasses/topic-1.html">Topic 1 - Objects and Classes</a></h3>
+            <h3><a href="Topic-2_Methods/topic2_methods.html">Topic 2 - Methods</a></h3>
+            <h3><a href="Topic-3_AccessModifAndEncapsulation/topic-3.html">Topic 3 - Access Modifiers and Encapsulation</a></h3>
+            <h3><a href="Topic-4__Inheritance/topic4_inheritance.html">Topic 4 - Inheritance</a></h3>
+            <h3><a href="charts/topic5-linechart.html">Topic 5 - LineChart</a></h3>
+            <h3><a href="charts/topic6-barchart.html">Topic 6 - BarChart</a></h3>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Add functionality to each topic block (if needed)
+        document.querySelectorAll('h3 a').forEach(topic => {
+            topic.addEventListener('click', () => {
+                const topicId = topic.textContent;
+                alert(`You clicked on ${topicId}`);
+            });
+        });
     </script>
+
 </body>
 </html>

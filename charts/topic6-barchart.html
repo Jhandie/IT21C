@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Aesthetic Bar Chart</title>
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f3f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Green Aesthetic Bar Chart</h1>
+
+    <div class="chart-container">
+        <canvas id="myBarChart"></canvas>
+    </div>
+
+    <script>
+        // Data for the Bar Chart
+        const ctx = document.getElementById('myBarChart').getContext('2d');
+        
+        const data = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Monthly Sales',
+                data: [45, 60, 75, 80, 90, 110, 150],
+                backgroundColor: '#28a745', // Green color for the bars
+                borderColor: '#1e7e34', // Darker green for the border
+                borderWidth: 2,
+                hoverBackgroundColor: '#218838', // Hover effect color (darker green)
+                hoverBorderColor: '#145a32', // Hover effect border color (darker green)
+            }]
+        };
+
+        // Bar Chart Configuration
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 14,
+                            },
+                            color: '#2c3e50',
+                        },
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 14,
+                            },
+                            color: '#2c3e50',
+                        },
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16,
+                                family: 'Arial, sans-serif',
+                            },
+                            color: '#2c3e50',
+                        },
+                    },
+                    tooltip: {
+                        titleFont: {
+                            size: 14,
+                        },
+                        bodyFont: {
+                            size: 14,
+                        },
+                        bodyColor: '#fff',
+                        backgroundColor: '#27ae60', // Tooltip background color (green)
+                    },
+                },
+            }
+        };
+
+        // Render the Chart
+        new Chart(ctx, config);
+    </script>
+
+</body>
+</html>
